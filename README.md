@@ -27,7 +27,9 @@ In this way, we can check for book deals every single day without having to burn
 The code is written in python comprinsing a collection of API calls, Beautifulsoup, and python requests.
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+- After cloning the repo. pip install the requirements.txt.
+- You will need to modify GOODREADS_KEY key and add your user key. This can be obtained from Goodreads website. Furthermore, you will also need to modify load_isbns_goodreads from the bookscraper file to include the url corresponding to your own reading list. More info can be found on Goodreads API website here: https://www.goodreads.com/api (Get the books on a members shelf)
+- Following the above changes, you can execute the script via terminal: python main.py
 
 ## Code Examples
 Show examples of usage:
@@ -45,10 +47,7 @@ To-do list:
 * email alerting for books when they lowered the their price
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: _in progress_
 
 ## Inspiration
 Add here credits. Project inspired by..., based on...
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
