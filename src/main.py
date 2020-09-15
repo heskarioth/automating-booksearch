@@ -10,7 +10,7 @@ from utils_scraper import normalise, keep_better_deals, scraper
 
 
 
-GOODREADS_KEY = 'R0Lj17AcI8snLtPbud5ZQ'
+GOODREADS_KEY = ''
 
 book = BookScraper()
 marketplace_list = ['abebooks','bookdepository']
