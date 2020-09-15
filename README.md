@@ -20,7 +20,7 @@ All you have to do is provide it with the list of isbns books you're looking for
 
 In this way, we can check for book deals every single day without having to burn out all the few brain neurons we're left with (and use them in more interesting things) :). 
 
-## Screenshots
+## Use Case
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
