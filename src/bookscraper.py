@@ -6,7 +6,7 @@ from urllib.request import urlopen
 import requests
 import re
 import json
-
+from PARAMETERS import GOODREADS_KEY,OPERATION_NAME,SECURITY_APPNAME_KEY,GLOBAL_ID
 
 
 class BookScraper:
@@ -16,6 +16,14 @@ class BookScraper:
         resp = requests.post(url, data=payload)
         #resp.raise_for_status()
         return resp.json()
+    
+    def get_price_ebay(self,isbn):
+        #OPERATION_NAME ='findItemsByProduct'
+        #SECURITY_APPNAME_KEY = 'CamilloH-bookscra-PRD-a500a4123-6c88b0c5'
+        #GLOBAL_ID = 'EBAY-GB'
+        url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME={}&SECURITY-APPNAME={}&GLOBAL-ID={}&RESPONSE-DATA-FORMAT=JSON&productId.@type=ISBN&productId={}&itemFilter.name=Condition&itemFilter.value=Used&sortOrder=PricePlusShippingLowest'.format(OPERATION_NAME,SECURITY_APPNAME_KEY,GLOBAL_ID,isbn)
+        receive = requests.get(url).json()
+        return receive
     
     def get_payload(self,isbn):
         payload = {'action': 'getPricingDataByISBN',
@@ -62,6 +70,6 @@ class BookScraper:
         
         book_title = [x.string.strip() for x in soup.find_all(['h1'])]
         
-        response = {'price':price,'author':author,'publisher':publisher, 'book_title':book_title}
+        response = {'price':price,'author':author,'publisher':publisher, 'book_title':book_title, 'urlPurchase':url}
         
         return response
